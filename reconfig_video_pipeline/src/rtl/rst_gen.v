@@ -12,7 +12,7 @@ module rst_gen #(
 );
 
     localparam RST_CNT_MAX = CLK_FREQ_HZ / 1000 * RST_TIME_MS - 1;
-    localparam RST_CNT_WIDTH = RST_CNT_MAX > 0 ? $clog2(RST_CNT_MAX + 1) : 1;
+    localparam RST_CNT_WIDTH = RST_CNT_MAX > 1 ? $clog2(RST_CNT_MAX + 1) : 1;
 
     (* ASYNC_REG = "TRUE" *)reg                     rst_sync_ff1;
     (* ASYNC_REG = "TRUE" *)reg                     rst_sync_ff2;

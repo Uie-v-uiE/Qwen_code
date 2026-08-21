@@ -13,7 +13,7 @@ module debounce #(
 );
 
     localparam DEB_CNT_MAX = CLK_FREQ_HZ / 1000 * DEB_TIME_MS - 1;
-    localparam DEB_CNT_WIDTH = DEB_CNT_MAX > 0 ? $clog2(DEB_CNT_MAX + 1) : 1;
+    localparam DEB_CNT_WIDTH = DEB_CNT_MAX > 1 ? $clog2(DEB_CNT_MAX + 1) : 1;
 
     (* ASYNC_REG = "TRUE" *)reg [              1:0] key_sync;
     reg [DEB_CNT_WIDTH-1:0] key_cnt;
